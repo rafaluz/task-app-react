@@ -28,14 +28,19 @@ function App() {
   function onTaskClick(taskId) {
     const newTasks = tasks.map((task) => {
       // PRECISO ATUALIZAR ESSA TAREFA
-      if (task.id === taskId){
-        return { ...task, isCompleted: !task.isCompleted}
+      if (task.id === taskId) {
+        return { ...task, isCompleted: !task.isCompleted };
       }
 
       // NÃO PRECISO ATUALIZAR ESSA TAREFA
-      return task
+      return task;
     });
-    setTasks(newTasks)
+    setTasks(newTasks);
+  }
+
+  function onDeleteTaskClick(taskId) {
+    const newTasks = tasks.filter((task) => task.id !== taskId);
+    setTasks(newTasks);
   }
 
   return (
@@ -45,7 +50,11 @@ function App() {
           Gerenciador de Tarefas
         </h1>
         <AddTask />
-        <Tasks tasks={tasks} onTaskClick={onTaskClick} />
+        <Tasks
+          tasks={tasks}
+          onTaskClick={onTaskClick}
+          onDeleteTaskClick={onDeleteTaskClick}
+        />
       </div>
     </div>
   );
