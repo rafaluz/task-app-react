@@ -63,11 +63,18 @@ function App() {
         <h1 className="text-3xl text-slate-100 font-bold text-center my-11">
           Gerenciador de Tarefas
         </h1>
-        <div className="flex flex-col md:flex-row gap-4">
-          <div className="w-full md:w-1/3">
+        {/* 
+          - Lembrete: Responsividade com flex
+          divpai: flex flex-col md:flex-row gap-4 
+            div1: w-full md:w-1/3
+            div2: w-full md:w-2/3
+          - Preferi utilizar o grid
+        */}
+        <div className="grid md:grid-cols-3 gap-4">
+          <div className="col-span-2 md:col-span-1">
             <AddTask onTaskSubmit={onTaskSubmit} />
           </div>
-          <div className="w-full md:w-2/3">
+          <div className="col-span-2">
             <Tasks
               tasks={tasks}
               onTaskClick={onTaskClick}
