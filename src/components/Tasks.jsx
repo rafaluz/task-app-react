@@ -12,7 +12,7 @@ function Tasks({ tasks, onTaskClick, onDeleteTaskClick }) {
             }`}
           >
             {task.isCompleted && <Check />}
-            {task.text}
+            {task.title}
           </button>
           <button className="bg-slate-400 text-white p-2 rounded-md">
             <ChevronRight />
