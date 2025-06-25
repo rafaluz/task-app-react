@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { v4 } from "uuid";
 
 function App() {
+  // -------- ARMAZENANDO AS TASKS EM LOCAL STORAGE --------
   const [tasks, setTasks] = useState(
     JSON.parse(localStorage.getItem("tasks")) || []
   );
@@ -12,6 +13,22 @@ function App() {
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
+
+  // -------- EXIBINDO TASKS VINDAS DE UMA API --------
+  useEffect(() => {
+    const fetchTasks = async () => {
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/todos?_limit=10",
+        {
+          method: "GET",
+        }
+      );
+      const data = await response.json();
+      setTasks(data);
+    };
+    // descomentar essa linha para utilizar as tasks da api
+    // fetchTasks();
+  }, []);
 
   function onTaskClick(taskId) {
     const newTasks = tasks.map((task) => {
@@ -43,7 +60,7 @@ function App() {
   }
 
   return (
-    <div className="w-screen h-screen bg-slate-900 flex justify-center p-6">
+    <div className="w-screen min-h-screen bg-slate-900 flex justify-center p-6">
       {/* <div className="w-[500px] space-y-4"> */}
       <div className="container mx-auto md:px-4 space-y-4">
         <h1 className="text-3xl text-slate-100 font-bold text-center my-11">
