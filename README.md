@@ -1,6 +1,6 @@
 # 📝 Gerenciador de Tarefas em React
 
-Este repositório contém o projeto **Gerenciador de Tarefas**, desenvolvido como parte do aprendizado em React, com base no curso do [Felipe Mota](https://github.com/felipemotarocha/curso-de-react-yt). A aplicação permite adicionar, listar, excluir e marcar tarefas como concluídas, com uso de recursos modernos do ecossistema React.
+Este repositório contém o projeto **Gerenciador de Tarefas**, desenvolvido como parte do aprendizado em React. A aplicação permite adicionar, listar, excluir e marcar tarefas como concluídas, com uso de recursos modernos do ecossistema React.
 
 ---
 
