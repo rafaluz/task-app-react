@@ -112,7 +112,7 @@ Abra no navegador: [http://localhost:5173](http://localhost:5173)
 
 ## 📷 Screenshot
 
-![Preview do aplicativo](./app.PNG)
+![Preview do aplicativo](./app.png)
 
 ---
 
